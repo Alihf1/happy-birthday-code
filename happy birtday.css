@@ -1,0 +1,65 @@
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+p {
+  margin: 0 0;
+  position: absolute;
+  font: 16px Verdana;
+  color: #eee;
+  height: 25px;
+  top: calc(100vh - 30px);
+  text-shadow: 0 0 2px white;
+}
+p a {
+  text-decoration: none;
+  color: #aaa;
+}
+span {
+  font-size: 11px;
+}
+p > a:first-of-type {
+  font-size: 20px;
+}
+body {
+  overflow: hidden;
+}
+.block-audio {
+	display: none;
+}
+/* ابحث عن body وقم بتعديله ليصبح هكذا للسماح بالتمرير عند الحاجة للأسفل */
+body {
+  --header-height: 4rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100lvh;
+  overflow-y: auto; /* تم التعديل من hidden إلى auto لتتمكن من النزول للحقوق */
+  overflow-x: hidden;
+}
+/* أضف هذا التنسيق في نهاية ملف ali.css لضمان ظهور الحقوق بشكل جميل وفي الأسفل */
+.ali-table-footer {
+  margin-top: auto; /* يدفع الحقوق لأسفل المحتوى */
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  background-color: transparent; /* إزالة الشريط الأسود عن النص */
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  z-index: 10; /* لضمان ظهورها فوق الطبقات الخلفية */
+  position: relative;
+}
+/* إعادة تعيين قواعد p العامة حتى لا تكسر نص الحقوق داخل الفوتر */
+.ali-table-footer p {
+  position: static;
+  top: auto;
+  height: auto;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  text-shadow: none;
+}
+.ali-table-footer img {
+  flex-shrink: 0;
+}
